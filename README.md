@@ -1,5 +1,9 @@
 # Cloud Native Monitoring App
 
+### About
+
+This is a python app for monitoring CPU and memory usage and can run on a base machine as well as a Docker container or a Kubernetes cluster. I have leveraged some popular python modules in building this app as well and they all available in the requirments.txt file. I also want to give credit to @N4si for so much insight.
+
 ## How to Use
 I ran into a few complications when building this on MacOS but don't worry, this Readme contains every problem i faced and how to resolve them.
 
@@ -27,7 +31,7 @@ To see that the image has been created and is available.
 docker images
 ```
 
-# Running the Docker image
+### Running the Docker image
 
 Trying to run the docker image with the normal "docker run -p 3000:3000 `<image-id>`" will not work.
 
@@ -38,6 +42,3 @@ docker run -p 3000:5000 <image-id>
 ```
 
 Now our monitoring app will be available at http://127.0.0.1:3000
-
-## Developer
-This tool was created by Daniel Pereowei Iwenya. <a href="mailto:iwenyadaniel12@gmail.com">Contact Developer.</a>
