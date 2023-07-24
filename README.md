@@ -1,9 +1,9 @@
-### Cloud Native Monitoring App
+# Cloud Native Monitoring App
 
-### How to Use
+## How to Use
 I ran into a few complications when building this on MacOS but don't worry, this Readme contains every problem i faced and how to resolve them.
 
-# Running your app locally
+### Running your app locally
 
 When running the app locally, if you try to use the default port, you will get the following error
 ```
@@ -13,9 +13,9 @@ On macOS, try disabling the 'AirPlay Receiver' service from System Preferences -
 ```
 the easiest way to solve this is by specifying the port as i did on app.py:16
 
-# Building Docker image
+### Building Docker image
 
-When building the docker image with the following command "docker build -t <image-name> .", the build process fails when trying to install psutil. so the solution i used for this was to specify the build platform.
+When building the docker image with the following command "docker build -t `<image-name>` .", the build process fails when trying to install psutil. so the solution i used for this was to specify the build platform.
 
 ```
 docker build --platform linux/amd64 -t <image-name> . 
@@ -29,7 +29,7 @@ docker images
 
 # Running the Docker image
 
-Trying to run the docker image with the normal "docker run -p 3000:3000 <image-id>" will not work.
+Trying to run the docker image with the normal "docker run -p 3000:3000 `<image-id>`" will not work.
 
 The flask app will still try to use port 5000 in the container so in order to resolve that, we need the route the ports properly.
 
@@ -39,5 +39,5 @@ docker run -p 3000:5000 <image-id>
 
 Now our monitoring app will be available at http://127.0.0.1:3000
 
-### Developer
+## Developer
 This tool was created by Daniel Pereowei Iwenya. <a href="mailto:iwenyadaniel12@gmail.com">Contact Developer.</a>
